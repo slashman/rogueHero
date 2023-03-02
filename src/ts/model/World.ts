@@ -14,28 +14,29 @@ export default {
 	init: function(game) {
 		this.game = game;
 		this.player = game.player;
-		this.loadLevel('testLevel' + Random.n(0,1000));
+		this.loadLevel('apartment'); // Load the initial level
 	},
 	loadLevel: function(levelId: string) {
 		if (this.levels[levelId]){
+			// We already generated or loaded that level, so we just move to it
 			this.level.exitX = this.player.x;
 			this.level.exitY = this.player.y;
 			this.level = this.levels[levelId];
 			this.player.x = this.level.exitX;
 			this.player.y = this.level.exitY;
 		} else {
+			// We must generate or loaded the level, and then move to it
+			let previousLevelId = undefined;
 			if (this.level) {
+				// There was a level loaded already, we store the returning location
 				this.level.exitX = this.player.x;
 				this.level.exitY = this.player.y;
-				var previousLevelId = this.level.id;
-				this.level = new Level(this.game, levelId);
-				LevelLoader.loadLevel(this.level, levelId, previousLevelId);
-				//LevelGenerator.generateTestLevel(this.level, previousLevelId, 'test'+Random.n(0,1000));
-			} else {
-				this.level = new Level(this.game, levelId);
-				LevelGenerator.generateTestLevel(this.level, undefined, 'test');
-				//LevelGenerator.generateTestLevel(this.level, undefined, 'test'+Random.n(0,1000));
+				previousLevelId = this.level.id;
 			}
+			// Create the level and store a reference to it
+			this.level = new Level(this.game, levelId);
+			LevelLoader.loadLevel(this.level, levelId, previousLevelId);
+			//LevelGenerator.generateTestLevel(this.level, previousLevelId, 'test'+Random.n(0,1000));
 			this.levels[levelId] = this.level;
 		}
 	}

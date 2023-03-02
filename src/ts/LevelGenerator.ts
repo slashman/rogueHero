@@ -29,11 +29,11 @@ export default {
 			let being = new Being(level.game, level, Races.RAT);
 			level.addBeing(being, Random.n(0,79), Random.n(0,24));
 			being.setIntent('RANDOM');
-			being = new Being(level.game, level, Races.TROLL);
+			being = new Being(level.game, level, Races.BANANA_SLUG);
 			level.addBeing(being, Random.n(0,79), Random.n(0,24));
 			being.setIntent('CHASE');
 		}
-		level.addItem(new Item(Items.IRON_SWORD), Random.n(0,79), Random.n(0,25));
+		level.addItem(new Item(Items.WALKMAN), Random.n(0,79), Random.n(0,25));
 		level.addItem(new Item(Items.BOOK_OF_MIRDAS), Random.n(0,79), Random.n(0,25));
 		if (fromId){
 			var xs = Random.n(0,79);

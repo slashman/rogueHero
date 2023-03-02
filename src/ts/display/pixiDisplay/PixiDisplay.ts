@@ -172,7 +172,7 @@ export default {
 	getBeing: function(x: number, y: number) {
 		var level = this.game.world.level;
 		if (x === level.player.x && y === level.player.y){
-			return '28-0';
+			return '1-0';
 		}
 		var xr = x - level.player.x;
 		var yr = y - level.player.y;
@@ -203,7 +203,7 @@ export default {
 				this.tileLayers[0][index].texture = terrainTexture;
 				if (terrain) {
 					if (terrain.variation === 'outOfSight') {
-						this.tileLayers[0][index].tint = 0x0000CC;
+						this.tileLayers[0][index].tint = 0x888888;
 					} else {
 						this.tileLayers[0][index].tint = 0xFFFFFF;
 					}

@@ -6,9 +6,10 @@
 import {globalDefs, levelMaps} from './data/Maps.data';
 import Being from './model/Being.class';
 import Item from './model/Item.class';
+import Level from './model/Level.class';
 
 export default {
-	loadLevel: function(level, mapId, fromId){
+	loadLevel: function(level: Level, mapId: string, fromId?: string){
 		const map = levelMaps[mapId];
 		level.map = [];
 		const defsMap = {};

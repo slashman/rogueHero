@@ -10,15 +10,15 @@ import Being from "./Being.class";
 import Item from "./Item.class";
 
 export default class Level {
-	private map: any[];
+	map: any[];
 	private beings: Being[][];
 	private exits: any[];
 	private items: any[];
 	
 	private beingsList: Being[];
-	private game: any;
+	game: any;
 	private id: string;
-	private player: any;
+	player: any;
 
 	constructor (game: any, id: string) {
 		this.init(game, id);

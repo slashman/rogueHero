@@ -3,11 +3,11 @@ const ut = (window as any).ut;
 import ItemType from './ItemTypes.data';
 
 export default {
-	IRON_SWORD: {
+	WALKMAN: {
 		type: ItemType.WEAPON,
-		name: 'Iron Sword',
+		name: 'Walkman',
 		tile: new ut.Tile('/', 128, 128, 128),
-		tilesetData: '32-7'
+		tilesetData: '1-3'
 	},
 	BOOK_OF_MIRDAS: {
 		type: ItemType.BOOK,

@@ -50,13 +50,9 @@ const Game = {
 	newGame: function () {
 		this.player.updateFOV();
 		this.display.refresh();
-		this.display.textBox.setText("Welcome to JSRL. Move around using the arrow keys, press comma to get items, [I] to access the inventory, then [U] or Enter to use items and [D] to drop them.");
-		Player.addItem(new Item(Items.BOOK_OF_MIRDAS));
-		Player.addItem(new Item(Items.IRON_SWORD));
-		Player.addItem(new Item(Items.BOOK_OF_MIRDAS));
-		Player.addItem(new Item(Items.IRON_SWORD));
-		Player.addItem(new Item(Items.SPELL_OF_LOLZORS));
-		Player.addItem(new Item(Items.BOOK_OF_AURORA));
+		this.display.textBox.setText("March 25 1980. Santa Cruz, California.\n\nYou see a ADM-3A Video Display Terminal. The connection with the Computer in the Communications Building has dropped. You decide to investigate.");
+		//this.display.textBox.setText("March 25 1980. Santa Cruz, California.\n\nYou see a bed.");
+		Player.addItem(new Item(Items.WALKMAN));
 		this.display.activateNewGame();
 	}
 }
