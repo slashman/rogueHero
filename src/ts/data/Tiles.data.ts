@@ -149,6 +149,18 @@ export default {
 		name: 'House',
 		tilesetData: '10-4'
 	},
+	BUILDINGFRONT: {
+		solid: true,
+		opaque: false,
+		name: 'Building',
+		tilesetData: '12-4'
+	},
+	BUILDINGDOOR: {
+		solid: true,
+		opaque: false,
+		name: 'Building',
+		tilesetData: '13-4'
+	},
 	SIDEWALK1: {
 		solid: false,
 		opaque: false,
@@ -208,5 +220,71 @@ export default {
 		opaque: false,
 		name: 'Car',
 		tilesetData: '4-7'
-	}
+	},
+	GRASS1: {
+		solid: false,
+		opaque: false,
+		name: 'Grass',
+		tilesetData: '5-6'
+	},
+	GRASS2: {
+		solid: false,
+		opaque: false,
+		name: 'Grass',
+		tilesetData: '6-6'
+	},
+	FLOWERS: {
+		solid: false,
+		opaque: false,
+		name: 'Grass',
+		tilesetData: '7-6'
+	},
+	GRASS3: {
+		solid: false,
+		opaque: false,
+		name: 'Grass',
+		tilesetData: '8-6'
+	},
+	PATHWAY: {
+		solid: false,
+		opaque: false,
+		name: 'Pathway',
+		tilesetData: '6-2'
+	},
+	TREETOP1: {
+		solid: true,
+		opaque: false,
+		name: 'Tree',
+		tilesetData: '0-6'
+	},
+	TREETOP2: {
+		solid: true,
+		opaque: false,
+		name: 'Tree',
+		tilesetData: '1-6'
+	},
+	TREETOP3: {
+		solid: true,
+		opaque: false,
+		name: 'Tree',
+		tilesetData: '2-6'
+	},
+	TREEBOTTOM1: {
+		solid: true,
+		opaque: false,
+		name: 'Tree',
+		tilesetData: '0-7'
+	},
+	TREEBOTTOM2: {
+		solid: true,
+		opaque: false,
+		name: 'Tree',
+		tilesetData: '1-7'
+	},
+	TREEBOTTOM3: {
+		solid: true,
+		opaque: false,
+		name: 'Tree',
+		tilesetData: '2-7'
+	},
 }
