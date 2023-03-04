@@ -81,49 +81,73 @@ export default {
 		solid: true,
 		opaque: false,
 		name: 'Bed',
-		tilesetData: '7-2'
+		tilesetData: '7-2',
+		interact: (game) => {
+			game.display.showText('No time to sleep!');
+		}
 	},
 	BED2: {
 		solid: true,
 		opaque: false,
 		name: 'Bed',
-		tilesetData: '8-2'
+		tilesetData: '8-2',
+		interact: (game) => {
+			game.display.showText('No time to sleep!');
+		}
 	},
 	BED3: {
 		solid: true,
 		opaque: false,
 		name: 'Bed',
-		tilesetData: '10-2'
+		tilesetData: '10-2',
+		interact: (game) => {
+			game.display.showText('That\'s Michael\'s bed... Can\'t waste time putting the sheets when there\'s rogue work to be done.');
+		}
 	},
 	BED4: {
 		solid: true,
 		opaque: false,
 		name: 'Bed',
-		tilesetData: '11-2'
+		tilesetData: '11-2',
+		interact: (game) => {
+			game.display.showText('That\'s Michael\'s bed... Can\'t waste time putting the sheets when there\'s rogue work to be done.');
+		}
 	},
 	MICROCOMPUTER: {
 		solid: true,
 		opaque: false,
 		name: 'Microcomputer',
-		tilesetData: '0-2'
+		tilesetData: '0-2',
+		interact: (game) => {
+			game.display.showText('That\'s Michael\'s 8080-based microcomputer, he assembled it from a kit.');
+		}
 	},
 	PHONE: {
 		solid: true,
 		opaque: false,
-		name: 'Table',
-		tilesetData: '1-2'
+		name: 'Telephone',
+		tilesetData: '1-2',
+		interact: (game) => {
+			game.display.showText('This is a "telephone". When you want to talk with someone far away, you lift the handset until you hear a tone, then you dial the phone number, number by number, using the rotary. It\'s useful to keep in touch with family.');
+		}
 	},
 	MODEM: {
 		solid: true,
 		opaque: false,
-		name: 'Table',
-		tilesetData: '2-2'
+		name: 'Modem',
+		tilesetData: '2-2',
+		interact: (game) => {
+			game.display.showText('A 300-baud acoustic modem. This device allows our terminal to connect to the computer in the University so we can work in Rogue. You place the telephone\'s handset on top of it, and both devices "talk" with high-pitches using the landline.');
+		}
 	},
 	TERMINAL: {
 		solid: true,
 		opaque: false,
 		name: 'ADM-3A Terminal',
-		tilesetData: '3-2'
+		tilesetData: '3-2',
+		interact: (game) => {
+			game.display.showText('A Lear Siegler ADM-3A Terminal from UCSC. The perks of being employees of the lab! we did a lot of work over the weekend in rogue\'s dungeon generation routines, but didn\'t save it and now the connection is down!');
+		}
 	},
 	HOUSETOP1: {
 		solid: true,
@@ -359,7 +383,24 @@ export default {
 		solid: false,
 		opaque: false,
 		name: 'VAC',
-		tilesetData: '10-10'
+		tilesetData: '10-10',
+		interact: (game) => {
+			game.display.showEvent('Aha! it looks like one of the banana slugs plugged off the modem connection',
+				[
+					{
+						text: 'Plug it back!',
+						action: () => {
+							if (game.world.level.player.time > 0) {
+								game.display.textBox.setText('You restored the connection on time! Thank you for playing!');
+							} else {
+								game.display.textBox.setText('Sadly, the Computer had reboot already. Your work in rogue is lost. Michael will be sad. Thank you for playing!');
+							}
+							game.input.mode = 'MOVEMENT';
+						}
+					}
+				]
+			);
+		}
 	},
 	VAC6: {
 		solid: true,

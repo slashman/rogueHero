@@ -36,7 +36,7 @@ export default {
 				[
 					{
 						text: 'Pick up the poop (5 minutes)',
-						cost: 5,
+						cost: 50,
 						action: () => {
 							game.display.textBox.setText('You clean up the poop');
 							game.world.level.removeItem(item.x, item.y);

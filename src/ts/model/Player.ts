@@ -23,6 +23,7 @@ export default {
 	visible: [],
 	memory: {},
 	items: [],
+	time: 900,
 	init: function(game) {
 		this.game = game;
 		for (var j = -this.MAX_SIGHT_RANGE; j <= this.MAX_SIGHT_RANGE; j++){
@@ -40,7 +41,7 @@ export default {
 				[
 					{
 						text: 'Help her cross the street (5 minutes)',
-						cost: 5,
+						cost: 50,
 						action: () => {
 							this.game.display.textBox.setText('You help the old lady cross the street, a small act of kindness?');
 							being.moveTo(0, 4);
@@ -65,14 +66,14 @@ export default {
 				[
 					{
 						text: 'Yes, that\'s me! (1 minute)',
-						cost: 1,
+						cost: 10,
 						action: () => {
 							this.game.display.showEvent(
 								'I knew! listen, I have a great idea to improve the game, do you want to hear it?',
 								[
 									{
 										text: 'Sure.. what is it? (1 minute)',
-										cost: 1,
+										cost: 10,
 										action: () => {
 											this.game.display.showEvent(
 												'"Imagine this: It\'s ROGUE, but with a MORALITY axis, so you have to be *kind* in order to win the game."\nYou believe it\'s not a very good idea.',
@@ -158,12 +159,20 @@ export default {
 			this.interactWithItem(item);
 			return;
 		}
+		const tile = this.game.world.level.getTile(this.x + dir.x, this.y + dir.y);
+		if (tile?.interact) {
+			this.game.input.inputEnabled = true;
+			tile.interact(this.game);
+			return;
+		}
+
 		if (!this.game.world.level.canWalkTo(this.x+dir.x, this.y+dir.y)){
 			this.game.input.inputEnabled = true;
 			return;
 		}
 		this.x += dir.x;
 		this.y += dir.y;
+		this.time--;
 		this.land();
 	},
 	land: function() {

@@ -236,7 +236,7 @@ export default {
 				this.tileLayers[2][index].texture = beingTexture;
 			}
 		}
-		this.statusText.text = this.game.world.level.name;
+		this.statusText.text = this.game.world.level.name + '\n\n Time left: ' + player.time;
 	},
 	showInventory: function() {
 		this.inventoryBackground.visible = true;
@@ -280,10 +280,17 @@ export default {
 	selectOption (index: number) {
 		const selectedOption = this.eventOptions[index];
 		if (selectedOption?.action) {
+			if (selectedOption.cost) {
+				this.game.world.level.player.time -= selectedOption.cost;
+			}
 			selectedOption.action();
+			
 		} else {
 			this.game.input.mode = 'MOVEMENT';
 		}
+	},
+	showText (text: string) {
+		this.textBox.setText(text);
 	}
 
 }
