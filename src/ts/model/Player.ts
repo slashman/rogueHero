@@ -39,6 +39,7 @@ export default {
 							this.game.display.textBox.setText('You help the old lady cross the street, a small act of kindness?');
 							being.moveTo(0, 4);
 							this.game.display.refresh();
+							this.game.input.mode = 'MOVEMENT';
 							being.interacted = true;
 						}
 					},
@@ -46,6 +47,83 @@ export default {
 						text: 'Look to the other side and continue walking',
 						action: () => {
 							this.game.display.textBox.setText('Yes. There is no time to lose.');
+							this.game.input.mode = 'MOVEMENT';
+						}
+					}
+				]
+			);
+			return;
+		}
+		if (being.eventId === 'KIPP' && !being.interacted) {
+			this.game.display.showEvent('A young man rushes at you. It\'s you, Glenn Wichman! You are one of the programmers of Rogue, right?',
+				[
+					{
+						text: 'Yes, that\'s me! (1 minute)',
+						cost: 1,
+						action: () => {
+							this.game.display.showEvent(
+								'I knew! listen, I have a great idea to improve the game, do you want to hear it?',
+								[
+									{
+										text: 'Sure.. what is it? (1 minute)',
+										cost: 1,
+										action: () => {
+											this.game.display.showEvent(
+												'"Imagine this: It\'s ROGUE, but with a MORALITY axis, so you have to be *kind* in order to win the game."\nYou believe it\'s not a very good idea.',
+												[
+													{
+														text: 'Well, being kind just for a mechanical benefit is not really being kind - it’s being selfish.',
+														action: () => {
+															this.game.display.textBox.setText('The man looks a bit disappointed. "Yes. I guess you are right."');
+															this.game.input.mode = 'MOVEMENT';
+														}
+													},
+													{
+														text: 'Oh... cool... yeah I will consider this... bye!',
+														action: () => {
+															this.game.display.textBox.setText('You are the best! let me know when it\'s in the game so I can boast with my friends!');
+															this.game.input.mode = 'MOVEMENT';
+														}
+													}
+												]
+											);
+											being.interacted = true;
+										}
+									},
+									{
+										text: 'Sorry, we have enough ideas already.',
+										action: () => {
+											this.game.display.textBox.setText('Of course... sorry to bother you!');
+											this.game.input.mode = 'MOVEMENT';
+											being.interacted = true;
+										}
+									},
+									{
+										text: 'Nope, I\'m a bit too busy now. Bye!',
+										action: () => {
+											this.game.display.textBox.setText('Of course... sorry to bother you!');
+											this.game.input.mode = 'MOVEMENT';
+											being.interacted = true;
+										}
+									}
+								]
+							);
+						}
+					},
+					{
+						text: 'Yes, but I\'m in a hurry. Sorry!',
+						action: () => {
+							this.game.display.textBox.setText('Of course... sorry to bother you!');
+							this.game.input.mode = 'MOVEMENT';
+							being.interacted = true;
+						}
+					},
+					{
+						text: 'Haha, no... people mistakes me for him every time!',
+						action: () => {
+							this.game.display.textBox.setText('Huh... ok.');
+							this.game.input.mode = 'MOVEMENT';
+							being.interacted = true;
 						}
 					}
 				]

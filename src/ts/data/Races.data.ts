@@ -10,7 +10,7 @@ export default {
 		tilesetData: '1-1'
 	},
 	TOY: {
-		name: 'Toy',
+		name: 'Michael',
 		tilesetData: '2-0',
 		dialogs: [
 			'I broke my leg last week playing rugby... so I fear I can\'t join you to the Campus.',
@@ -25,5 +25,12 @@ export default {
 		dialogs: [
 			'Thank you, young man!'
 		]
-	}
+	},
+	KIPP: {
+		name: 'Kipp',
+		tilesetData: '3-1',
+		dialogs: [
+			'Isn\'t it a lovely day?'
+		]
+	},
 }

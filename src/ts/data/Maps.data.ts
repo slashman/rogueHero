@@ -85,6 +85,7 @@ const levelMaps = {
 		]
 	},
 	overworld: {
+		name: 'Streets of Santa Cruz',
 		onEnter: 'You breathe the fresh air of California. You can hear the sea nearby. Your car is parked to the Northwest.',
 		defs: [
 			{ char: '>', tile: Tiles.SIDEWALK3, exitTo: 'apartment', start: true },
@@ -138,6 +139,9 @@ const levelMaps = {
 				y: 12,
 				target: 'dungeon'
 			}
+		],
+		beings: [
+			{ x: 5, y: 4, race: Races.KIPP, eventId: 'KIPP'}
 		],
 		width: 64,
 		height: 32,

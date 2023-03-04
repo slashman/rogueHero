@@ -270,8 +270,8 @@ export default {
 		this.mainGameContainer.visible = true;
 	},
 	showEvent (eventText: string, options: IEventOption[]): void {
-		let theText = eventText;
-		options.forEach((o, i) => theText += `\n\n${String.fromCharCode(97 + i)}: ${o.text}`)
+		let theText = eventText + '\n';
+		options.forEach((o, i) => theText += `\n${String.fromCharCode(97 + i)}: ${o.text}`)
 		this.textBox.setText(theText);
 		this.eventOptions = options;
 		this.game.input.inputEnabled = true;
@@ -281,8 +281,9 @@ export default {
 		const selectedOption = this.eventOptions[index];
 		if (selectedOption?.action) {
 			selectedOption.action();
+		} else {
+			this.game.input.mode = 'MOVEMENT';
 		}
-		this.game.input.mode = 'MOVEMENT';
 	}
 
 }

@@ -67,6 +67,15 @@ export default {
 				}
 			})
 		}
+		if (map.beings) {
+			map.beings.forEach(b => {
+				const being = new Being(level.game, level, b.race);
+				level.addBeing(being, b.x, b.y);
+				being.setIntent(b.intent || 'RANDOM');
+				being.eventId = b.eventId;
+			})
+		}
+		
 
 	},
 	processDef (level: Level, x: number, y: number, def: any, fromId: string) {
