@@ -49,7 +49,7 @@ export default {
 	},
 	SOLID_VOID: {
 		solid: true,
-		opaque: false,
+		opaque: true,
 		name: 'Void',
 		tilesetData: '0-0'
 	},
