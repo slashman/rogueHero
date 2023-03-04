@@ -50,8 +50,7 @@ const Game = {
 	newGame: function () {
 		this.player.updateFOV();
 		this.display.refresh();
-		this.display.textBox.setText("March 25 1980. Santa Cruz, California.\n\nYou see a ADM-3A Video Display Terminal. The connection with the Computer in the Communications Building has dropped. You decide to investigate.");
-		//this.display.textBox.setText("March 25 1980. Santa Cruz, California.\n\nYou see a bed.");
+		this.display.textBox.setText("The connection with the Computer in the Communications Building has dropped. You decide to investigate.");
 		Player.addItem(new Item(Items.WALKMAN));
 		this.display.activateNewGame();
 	}

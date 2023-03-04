@@ -94,11 +94,25 @@ export default {
 			wordWrapWidth: config.tileSize * config.viewportCountX * 4
 		});
 		text.position.x = 10;
-		text.position.y = 10;
+		text.position.y = (config.tileSize * config.viewportCountY) / 2 + 96;
 		text.scale.x = 0.25;
 		text.scale.y = 0.25;
 		mainGameContainer.addChild(text);
 		this.textBox = new PIXITextBox(text);
+
+		this.statusText = new Text('', {
+			fontFamily: 'Kenney Pixel',
+			fontSize: config.textboxFontSize,
+			fill: 0xdddddd,
+			align: 'left',
+			wordWrap: true,
+			wordWrapWidth: config.tileSize * config.viewportCountX * 4
+		});
+		this.statusText.position.x = 10;
+		this.statusText.position.y = 10;
+		this.statusText.scale.x = 0.25;
+		this.statusText.scale.y = 0.25;
+		mainGameContainer.addChild(this.statusText);
 
 		this.inventoryBackground = new Sprite(blackTexture);
 		this.inventoryBackground.width = 106;
@@ -212,6 +226,7 @@ export default {
 				this.tileLayers[2][index].texture = beingTexture;
 			}
 		}
+		this.statusText.text = this.game.world.level.name;
 	},
 	showInventory: function() {
 		this.inventoryBackground.visible = true;

@@ -12,6 +12,7 @@ export default {
 	loadLevel: function(level: Level, mapId: string, fromId?: string){
 		const map = levelMaps[mapId];
 		level.map = [];
+		level.name = map.name;
 		const defsMap = {};
 		const indexesMap = {};
 		const defsList = globalDefs.concat(map.defs);

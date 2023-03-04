@@ -11,6 +11,7 @@ import Item from "./Item.class";
 
 export default class Level {
 	map: any[];
+	name: string;
 	private beings: Being[][];
 	private exits: any[];
 	private items: any[];
