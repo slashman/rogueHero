@@ -13,4 +13,8 @@ export default {
 		name: 'Toy',
 		tilesetData: '2-0'
 	},
+	OLD_LADY: {
+		name: 'Old Lady',
+		tilesetData: '2-1'
+	}
 }

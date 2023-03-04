@@ -1,3 +1,5 @@
+import Being from "./Being.class";
+
 const ut = (window as any).ut;
 
 /**
@@ -25,7 +27,39 @@ export default {
 			this.visible[j] = [];
 		}
 	},
-	tryMove: function(dir) {
+	interactWithBeing (being: Being) {
+		if (being.eventId === 'OLD_LADY') {
+			if (being.interacted) {
+				return;
+			}
+			this.game.display.showEvent('You see an old lady, it looks like she has been trying to cross the street for hours. What will you do?',
+				[
+					{
+						text: 'Help her cross the street (5 minutes)',
+						cost: 5,
+						action: () => {
+							this.game.display.textBox.setText('You help the old lady cross the street, a small act of kindness?');
+							being.moveTo(0, 4);
+							this.game.display.refresh();
+							being.interacted = true;
+						}
+					},
+					{
+						text: 'Look to the other side and continue walking',
+						action: () => {
+							this.game.display.textBox.setText('Yes. There is no time to lose.');
+						}
+					}
+				]
+			);
+		}
+	},
+	tryMove: function(dir: {x: number, y: number}) {
+		const being = this.game.world.level.getBeing(this.x + dir.x, this.y + dir.y);
+		if (being) {
+			this.interactWithBeing(being);
+			return;
+		}
 		if (!this.game.world.level.canWalkTo(this.x+dir.x, this.y+dir.y)){
 			this.game.input.inputEnabled = true;
 			return;

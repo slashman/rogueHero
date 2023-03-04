@@ -76,7 +76,8 @@ export default {
 		if (def.being) {
 			var being = new Being(level.game, level, def.being);
 			level.addBeing(being, x, y);
-			being.setIntent('RANDOM');
+			being.setIntent(def.intent || 'RANDOM');
+			being.eventId = def.eventId;
 		}
 		if (def.exitTo) {
 			level.addExit(x, y, def.exitTo, def.tile);

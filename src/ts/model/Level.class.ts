@@ -71,6 +71,10 @@ export default class Level {
 		return true;
 	}
 
+	getBeing (x: number, y: number): Being {
+		return this.beings[x] ? this.beings[x][y] : null;
+	}
+
 	addExit (x: number, y: number, levelId: string, tile?: any) {
 		if (tile) {
 			if (!this.map[x])

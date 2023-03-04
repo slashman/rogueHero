@@ -6,6 +6,7 @@
  */
 
 import { Application, Assets, Texture, Rectangle, Sprite, Text, Container } from 'pixi.js';
+import IEventOption from '../../model/IEventOption';
 import PIXITextBox from './PIXITextBox.class';
 import PixiUtils from './PixiUtils';
 
@@ -100,7 +101,7 @@ export default {
 			fill: config.textColor,
 			align: 'left',
 			wordWrap: true,
-			wordWrapWidth: config.tileSize * config.viewportCountX * 4
+			wordWrapWidth: config.tileSize * config.viewportCountX * 4 - 20
 		});
 		text.position.x = 10;
 		text.position.y = (config.tileSize * config.viewportCountY) / 2 + 96;
@@ -267,5 +268,21 @@ export default {
 	activateNewGame() {
 		this.titleScreenContainer.visible = false;
 		this.mainGameContainer.visible = true;
+	},
+	showEvent (eventText: string, options: IEventOption[]): void {
+		let theText = eventText;
+		options.forEach((o, i) => theText += `\n\n${String.fromCharCode(97 + i)}: ${o.text}`)
+		this.textBox.setText(theText);
+		this.eventOptions = options;
+		this.game.input.inputEnabled = true;
+		this.game.input.mode = 'EVENT';
+	},
+	selectOption (index: number) {
+		const selectedOption = this.eventOptions[index];
+		if (selectedOption?.action) {
+			selectedOption.action();
+		}
+		this.game.input.mode = 'MOVEMENT';
 	}
+
 }

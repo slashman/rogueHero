@@ -16,6 +16,8 @@ export default class Being {
 	private xPosition: number;
 	private yPosition: number;
 	private intent: string;
+	eventId: string;
+	interacted: boolean;
 
 	get x(): number {
 		return this.xPosition;
@@ -44,6 +46,9 @@ export default class Being {
 			case 'CHASE':
 				this.actChase();
 				break;
+			case 'WAIT':
+				this.actWait();
+				break;
 		}
 	}
 
@@ -55,6 +60,11 @@ export default class Being {
 		}
 		this.moveTo(dx, dy);
 	}
+
+	actWait () {
+		// Do nothing.
+	}
+
 
 	actChase () {
 		var nearestEnemy = this.getNearestEnemy();
