@@ -39,5 +39,8 @@ export default {
 			//LevelGenerator.generateTestLevel(this.level, previousLevelId, 'test'+Random.n(0,1000));
 			this.levels[levelId] = this.level;
 		}
+		if (this.level.onEnter) {
+			this.game.display.textBox.setText(this.level.onEnter);
+		}
 	}
 }

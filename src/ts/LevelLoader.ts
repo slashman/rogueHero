@@ -13,6 +13,7 @@ export default {
 		const map = levelMaps[mapId];
 		level.map = [];
 		level.name = map.name;
+		level.onEnter = map.onEnter;
 		const defsMap = {};
 		const indexesMap = {};
 		const defsList = globalDefs.concat(map.defs);

@@ -1,3 +1,4 @@
+import Random from "../Random";
 import Being from "./Being.class";
 
 const ut = (window as any).ut;
@@ -28,10 +29,7 @@ export default {
 		}
 	},
 	interactWithBeing (being: Being) {
-		if (being.eventId === 'OLD_LADY') {
-			if (being.interacted) {
-				return;
-			}
+		if (being.eventId === 'OLD_LADY' && !being.interacted) {
 			this.game.display.showEvent('You see an old lady, it looks like she has been trying to cross the street for hours. What will you do?',
 				[
 					{
@@ -52,6 +50,16 @@ export default {
 					}
 				]
 			);
+			return;
+		}
+		if (being.race.dialogs) {
+			being.currentMessage++;
+			if (being.currentMessage >= being.race.dialogs.length) {
+				being.currentMessage = 0;
+			}
+			this.game.display.textBox.setText(`${being.race.name} says: ${being.race.dialogs[being.currentMessage]}`);
+			this.game.input.inputEnabled = true;
+			this.game.input.mode = 'MOVEMENT';
 		}
 	},
 	tryMove: function(dir: {x: number, y: number}) {

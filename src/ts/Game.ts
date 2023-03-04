@@ -50,7 +50,6 @@ const Game = {
 	newGame: function () {
 		this.player.updateFOV();
 		this.display.refresh();
-		this.display.textBox.setText("The connection with the Computer in the Communications Building has dropped. You decide to investigate.");
 		Player.addItem(new Item(Items.WALKMAN));
 		this.display.activateNewGame();
 	}

@@ -18,6 +18,8 @@ export default class Being {
 	private intent: string;
 	eventId: string;
 	interacted: boolean;
+	race: any;
+	currentMessage: number = 0;
 
 	get x(): number {
 		return this.xPosition;
@@ -33,6 +35,7 @@ export default class Being {
 		this.tile = race.tile;
 		this.tileName = race.name;
 		this.tilesetData = race.tilesetData;
+		this.race = race;
 		this.xPosition = 0;
 		this.yPosition = 0;
 		this.intent = 'CHASE';
