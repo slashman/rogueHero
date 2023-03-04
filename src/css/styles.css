@@ -1,6 +1,6 @@
 @font-face {
-	font-family: 'Kenney Pixel';
-	src: url('fonts/Kenney Pixel.ttf') format('truetype');
+	font-family: '_decterm';
+	src: url('fonts/ModernDOS8x16.ttf') format('truetype');
 }
 
 body {

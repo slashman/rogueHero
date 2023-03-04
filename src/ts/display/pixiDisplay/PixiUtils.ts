@@ -1,11 +1,11 @@
 import { Text } from 'pixi.js';
 
 export default {
-	createTextBox(x, y, fontSize, initialText, wordWrapWidth?) {
+	createTextBox(x, y, fontSize, textColor, initialText, wordWrapWidth?) {
 		const textBox = new Text(initialText, {
-			fontFamily: 'Kenney Pixel',
+			fontFamily: '_decterm',
 			fontSize: fontSize,
-			fill: 0xdddddd,
+			fill: textColor,
 			align: 'left',
 			wordWrap: !!wordWrapWidth,
 			wordWrapWidth: wordWrapWidth

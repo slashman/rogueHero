@@ -16,6 +16,7 @@ window.onload = () => {
       viewportCountX: 27,
       viewportCountY: 27,
       textboxFontSize: 64,
+      textColor: 0xFFCC00,
 
       transparentTiles: false
     }

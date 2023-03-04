@@ -59,10 +59,19 @@ export default {
 		app.stage.addChild(titleScreenContainer);
 		titleScreenContainer.visible = false;
 		titleScreenContainer.addChild(
-			PixiUtils.createTextBox(20, 20, config.textboxFontSize, "JSRL Sample Roguelike")
+			PixiUtils.createTextBox(20, 2*16, config.textboxFontSize, config.textColor, "Broken Connection")
 		);
 		titleScreenContainer.addChild(
-			PixiUtils.createTextBox(20, 40, config.textboxFontSize, "Press Space to Continue")
+			PixiUtils.createTextBox(20, 4*16, config.textboxFontSize, config.textColor, "Based on real life events")
+		);
+		titleScreenContainer.addChild(
+			PixiUtils.createTextBox(20, 5*16, config.textboxFontSize, config.textColor, "An entry for Hidden Heroes Jam, 2023")
+		);
+		titleScreenContainer.addChild(
+			PixiUtils.createTextBox(20, 7*16, config.textboxFontSize, config.textColor, "Developed by Santiago Zapata")
+		);
+		titleScreenContainer.addChild(
+			PixiUtils.createTextBox(20, 9*16, config.textboxFontSize, config.textColor, "Press Space to Continue")
 		);
 
 		const mainGameContainer = new Container();
@@ -86,9 +95,9 @@ export default {
 		this.semiViewportCountX = Math.floor(config.viewportCountX / 2);
 		this.semiViewportCountY = Math.floor(config.viewportCountY / 2);
 		const text = new Text('', {
-			fontFamily: 'Kenney Pixel',
+			fontFamily: '_decterm',
 			fontSize: config.textboxFontSize,
-			fill: 0xdddddd,
+			fill: config.textColor,
 			align: 'left',
 			wordWrap: true,
 			wordWrapWidth: config.tileSize * config.viewportCountX * 4
@@ -101,9 +110,9 @@ export default {
 		this.textBox = new PIXITextBox(text);
 
 		this.statusText = new Text('', {
-			fontFamily: 'Kenney Pixel',
+			fontFamily: '_decterm',
 			fontSize: config.textboxFontSize,
-			fill: 0xdddddd,
+			fill: config.textColor,
 			align: 'left',
 			wordWrap: true,
 			wordWrapWidth: config.tileSize * config.viewportCountX * 4
@@ -128,9 +137,9 @@ export default {
 		mainGameContainer.addChild(this.inventoryCursor);
 
 		this.inventoryText = new Text('', {
-			fontFamily: 'Kenney Pixel',
+			fontFamily: '_decterm',
 			fontSize: config.textboxFontSize,
-			fill: 0xdddddd,
+			fill: config.textColor,
 			align: 'left',
 		});
 		this.inventoryText.scale.x = 0.25;
