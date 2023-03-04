@@ -6,7 +6,9 @@
  */
 
 export default class Item {
-	private def: any;
+	def: any;
+	x: number;
+	y: number;
 	constructor (def: any) {
 		this.def = def;
 	}

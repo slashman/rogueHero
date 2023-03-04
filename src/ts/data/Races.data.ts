@@ -33,4 +33,11 @@ export default {
 			'Isn\'t it a lovely day?'
 		]
 	},
+	DOG: {
+		name: 'Dog',
+		tilesetData: '4-1',
+		dialogs: [
+			'Woof! Woof!'
+		]
+	},
 }

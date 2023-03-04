@@ -27,5 +27,32 @@ export default {
 		name: 'Spell of Lolzors',
 		tile: new ut.Tile('S', 0, 255, 0),
 		tilesetData: '45-5'
+	},
+	POOP: {
+		name: 'Poop',
+		tilesetData: '2-3',
+		interact: (game, item) => {
+			game.display.showEvent('There\'s some poop here... likely from that stray dog. What will you do?',
+				[
+					{
+						text: 'Pick up the poop (5 minutes)',
+						cost: 5,
+						action: () => {
+							game.display.textBox.setText('You clean up the poop');
+							game.world.level.removeItem(item.x, item.y);
+							game.display.refresh();
+							game.input.mode = 'MOVEMENT';
+						}
+					},
+					{
+						text: 'Eww... gross.',
+						action: () => {
+							game.display.textBox.setText('Agreed.');
+							game.input.mode = 'MOVEMENT';
+						}
+					}
+				]
+			);
+		}
 	}
 }

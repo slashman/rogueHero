@@ -75,8 +75,11 @@ export default {
 				being.eventId = b.eventId;
 			})
 		}
-		
-
+		if (map.items) {
+			map.items.forEach(i => {
+				level.addItem(new Item(i.item), i.x, i.y);
+			})
+		}
 	},
 	processDef (level: Level, x: number, y: number, def: any, fromId: string) {
 		level.map[x][y] = def.tile;

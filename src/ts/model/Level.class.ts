@@ -91,6 +91,8 @@ export default class Level {
 		if (!this.items[x])
 			this.items[x] = [];
 		this.items[x][y] = item;
+		item.x = x;
+		item.y = y;
 	}
 
 	getItem (x: number, y: number) {

@@ -1,5 +1,6 @@
 import Random from "../Random";
 import Being from "./Being.class";
+import Item from "./Item.class";
 
 const ut = (window as any).ut;
 
@@ -26,6 +27,11 @@ export default {
 		this.game = game;
 		for (var j = -this.MAX_SIGHT_RANGE; j <= this.MAX_SIGHT_RANGE; j++){
 			this.visible[j] = [];
+		}
+	},
+	interactWithItem (item: Item) {
+		if (item.def.interact) {
+			item.def.interact(this.game, item);
 		}
 	},
 	interactWithBeing (being: Being) {
@@ -144,6 +150,12 @@ export default {
 		const being = this.game.world.level.getBeing(this.x + dir.x, this.y + dir.y);
 		if (being) {
 			this.interactWithBeing(being);
+			return;
+		}
+		const item = this.game.world.level.getItem(this.x + dir.x, this.y + dir.y);
+		if (item) {
+			this.game.input.inputEnabled = true;
+			this.interactWithItem(item);
 			return;
 		}
 		if (!this.game.world.level.canWalkTo(this.x+dir.x, this.y+dir.y)){
