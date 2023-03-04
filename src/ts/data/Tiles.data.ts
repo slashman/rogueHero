@@ -47,6 +47,12 @@ export default {
 		name: 'Floor',
 		tilesetData: '0-0'
 	},
+	SOLID_VOID: {
+		solid: true,
+		opaque: false,
+		name: 'Void',
+		tilesetData: '0-0'
+	},
 	FLOOR: {
 		solid: false,
 		opaque: false,
@@ -158,8 +164,14 @@ export default {
 	BUILDINGDOOR: {
 		solid: true,
 		opaque: false,
-		name: 'Building',
+		name: 'Door',
 		tilesetData: '13-4'
+	},
+	BUILDINGDOOROPEN: {
+		solid: false,
+		opaque: false,
+		name: 'Door',
+		tilesetData: '14-4'
 	},
 	SIDEWALK1: {
 		solid: false,
@@ -286,5 +298,85 @@ export default {
 		opaque: false,
 		name: 'Tree',
 		tilesetData: '2-7'
+	},
+
+	ASCIIFLOOR: {
+		solid: false,
+		opaque: false,
+		name: 'Floor',
+		tilesetData: '5-8'
+	},
+	ASCIICORRIDOR: {
+		solid: false,
+		opaque: false,
+		name: 'Corridor',
+		tilesetData: '6-8'
+	},
+	ASCIIDOOR: {
+		solid: false,
+		opaque: true,
+		name: 'Door',
+		tilesetData: '7-8'
+	},
+	ASCIIWALLH: {
+		solid: true,
+		opaque: true,
+		name: 'Wall',
+		tilesetData: '8-8'
+	},
+	ASCIIWALLV: {
+		solid: true,
+		opaque: true,
+		name: 'Wall',
+		tilesetData: '9-8'
+	},
+
+	VAC1: {
+		solid: true,
+		opaque: false,
+		name: 'VAC',
+		tilesetData: '10-9'
+	},
+	VAC2: {
+		solid: true,
+		opaque: false,
+		name: 'VAC',
+		tilesetData: '11-9'
+	},
+	VAC3: {
+		solid: true,
+		opaque: false,
+		name: 'VAC',
+		tilesetData: '12-9'
+	},
+	VAC4: {
+		solid: true,
+		opaque: false,
+		name: 'VAC',
+		tilesetData: '13-9'
+	},
+	VAC5: {
+		solid: false,
+		opaque: false,
+		name: 'VAC',
+		tilesetData: '10-10'
+	},
+	VAC6: {
+		solid: true,
+		opaque: false,
+		name: 'VAC',
+		tilesetData: '11-10'
+	},
+	VAC7: {
+		solid: true,
+		opaque: false,
+		name: 'VAC',
+		tilesetData: '11-10'
+	},
+	VAC8: {
+		solid: true,
+		opaque: false,
+		name: 'VAC',
+		tilesetData: '12-10'
 	},
 }

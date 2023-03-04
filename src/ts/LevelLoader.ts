@@ -56,6 +56,16 @@ export default {
 		} else {
 			throw new Error('Invalid map for level ' + mapId);
 		}
+		if (map.exits) {
+			map.exits.forEach(e => {
+				level.addExit(e.x, e.y, e.target);
+				if (e.start) {
+					level.player.x = e.x;
+					level.player.y = e.y;
+				}
+			})
+		}
+
 	},
 	processDef (level: Level, x: number, y: number, def: any, fromId: string) {
 		level.map[x][y] = def.tile;

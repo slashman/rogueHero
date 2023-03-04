@@ -70,10 +70,12 @@ export default class Level {
 		return true;
 	}
 
-	addExit (x: number, y: number, levelId: string, tile: any) {
-		if (!this.map[x])
-			this.map[x] = [];
-		this.map[x][y] = tile;
+	addExit (x: number, y: number, levelId: string, tile?: any) {
+		if (tile) {
+			if (!this.map[x])
+				this.map[x] = [];
+			this.map[x][y] = tile;
+		}
 		if (!this.exits[x])
 			this.exits[x] = [];
 		this.exits[x][y] = levelId;
