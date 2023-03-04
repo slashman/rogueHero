@@ -75,7 +75,7 @@ export default {
 		}
 	},
 	getSightRange: function() {
-		return 15;
+		return 5;
 	},
 	updateFOV: function() {
 		/*

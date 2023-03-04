@@ -203,7 +203,7 @@ export default {
 				this.tileLayers[0][index].texture = terrainTexture;
 				if (terrain) {
 					if (terrain.variation === 'outOfSight') {
-						this.tileLayers[0][index].tint = 0x888888;
+						this.tileLayers[0][index].tint = 0x000055;
 					} else {
 						this.tileLayers[0][index].tint = 0xFFFFFF;
 					}
