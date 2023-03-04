@@ -103,7 +103,7 @@ export default {
 			this.visible[testx-this.x][testy-this.y] = true;
 			this.remember(testx, testy);
 			try { 
-				if (this.game.world.level.map[testx][testy].opaque)
+				if (this.game.world.level.map[testx][testy].opaque && !(testx == this.x && testy == this.y))
 					return;
 			} catch(err) {
 				// Catch OOB
