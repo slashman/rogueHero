@@ -99,4 +99,11 @@ export default class Being {
 	setIntent (intent: string) {
 		this.intent = intent;
 	}
+
+	getName (): string {
+		if (this.race.unique) {
+			return this.race.name;
+		}
+		return 'The ' + this.race.name
+	}
 }

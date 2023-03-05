@@ -165,7 +165,7 @@ export default {
 			if (being.currentMessage >= being.race.dialogs.length) {
 				being.currentMessage = 0;
 			}
-			this.game.display.textBox.setText(`${being.race.name} says: ${being.race.dialogs[being.currentMessage]}`);
+			this.game.display.textBox.setText(`${being.getName()} says: ${being.race.dialogs[being.currentMessage]}`);
 			this.game.input.inputEnabled = true;
 			this.game.input.mode = 'MOVEMENT';
 		}

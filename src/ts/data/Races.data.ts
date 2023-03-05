@@ -17,7 +17,8 @@ export default {
 			'Please go to the Communications Building and plug back the computer\'s modem so we can connect again!',
 			'I fear I may be kicked off Santa Cruz soon :(',
 			'Got any ideas for new monsters?'
-		]
+		],
+		unique: true
 	},
 	OLD_LADY: {
 		name: 'Old Lady',
@@ -31,7 +32,8 @@ export default {
 		tilesetData: '3-1',
 		dialogs: [
 			'Isn\'t it a lovely day?'
-		]
+		],
+		unique: true
 	},
 	DOG: {
 		name: 'Dog',
