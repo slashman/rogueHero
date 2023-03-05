@@ -137,6 +137,29 @@ export default {
 			);
 			return;
 		}
+		if (being.eventId === 'PUNK' && !being.interacted) {
+			this.game.display.showEvent('You see a man, seemingly worried heavily by something. What will you do?',
+				[
+					{
+						text: 'Ask him why he\'s sad (1 minute)',
+						cost: 10,
+						action: () => {
+							this.game.display.showText('Why do you care? it\'s none of your business!');
+							this.game.input.mode = 'MOVEMENT';
+							being.interacted = true;
+						}
+					},
+					{
+						text: 'Ignore him',
+						action: () => {
+							this.game.display.showText('Yup, why would you care anyways.');
+							this.game.input.mode = 'MOVEMENT';
+						}
+					},
+				]
+			);
+			return;
+		}
 		if (being.race.dialogs) {
 			being.currentMessage++;
 			if (being.currentMessage >= being.race.dialogs.length) {

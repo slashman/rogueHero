@@ -40,4 +40,11 @@ export default {
 			'Woof! Woof!'
 		]
 	},
+	PUNK: {
+		name: 'Man',
+		tilesetData: '5-1',
+		dialogs: [
+			'What\'s your problem?'
+		]
+	},
 }
