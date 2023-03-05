@@ -76,6 +76,10 @@ export default class Being {
 		}
 		var dx = Math.sign(nearestEnemy.x - this.x);
 		var dy = Math.sign(nearestEnemy.y - this.y);
+		if (this.x + dx === nearestEnemy.x && this.y + dy === nearestEnemy.y) {
+			this.game.player.interactWithBeing(this);
+			return;
+		}
 		if (!this.level.canWalkTo(this.x+dx,this.y+dy)){
 			return;
 		}

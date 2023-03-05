@@ -147,7 +147,7 @@ const levelMaps = {
 			}
 		],
 		beings: [
-			{ x: 5, y: 4, race: Races.KIPP, eventId: 'KIPP'},
+			{ x: 5, y: 14, race: Races.KIPP, eventId: 'KIPP', intent: 'CHASE'},
 			{ x: 17, y: 3, race: Races.DOG, eventId: 'DOG'},
 			{ x: 10, y: 4, race: Races.PUNK, eventId: 'PUNK'},
 		],
