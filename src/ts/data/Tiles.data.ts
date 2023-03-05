@@ -385,11 +385,15 @@ export default {
 		name: 'VAC',
 		tilesetData: '10-10',
 		interact: (game) => {
+			if (game.world.level.player.plugged) {
+				return;
+			}
 			game.display.showEvent('Aha! it looks like one of the banana slugs plugged off the modem connection',
 				[
 					{
 						text: 'Plug it back!',
 						action: () => {
+							game.world.level.player.plugged = true;
 							if (game.world.level.player.time > 0) {
 								game.display.textBox.setText('You restored the connection on time! Thank you for playing!');
 							} else {

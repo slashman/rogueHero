@@ -282,7 +282,7 @@ export default {
 		}
 		this.x += dir.x;
 		this.y += dir.y;
-		if (this.game.world.level.id !== 'apartment') {
+		if (this.game.world.level.id !== 'apartment' && !this.game.world.level.player.plugged) {
 			this.time--;
 		}
 		this.game.audio.playSfx('step');

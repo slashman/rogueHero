@@ -280,7 +280,7 @@ export default {
 	selectOption (index: number) {
 		const selectedOption = this.eventOptions[index];
 		if (selectedOption?.action) {
-			if (selectedOption.cost) {
+			if (selectedOption.cost && !this.game.world.level.player.plugged) {
 				this.game.world.level.player.time -= selectedOption.cost;
 			}
 			selectedOption.action();
