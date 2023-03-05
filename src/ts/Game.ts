@@ -14,6 +14,8 @@ import Input from './Input';
 
 import Item from './model/Item.class';
 import Items from './data/Items.data';
+import Audio from './Audio';
+import AudioTracks from './data/AudioTracks';
 
 declare global {
 	interface Window {
@@ -41,6 +43,9 @@ const Game = {
 		this.world = World;
 		this.player = Player;
 		this.input = Input;
+		this.audio = Audio;
+		Audio.init(this);
+		AudioTracks.loadAudio(this);
 		await this.display.init(this, config.displayConfig);
 		Player.init(this);
 		World.init(this);

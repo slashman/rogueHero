@@ -13,6 +13,7 @@ export default {
 		const map = levelMaps[mapId];
 		level.map = [];
 		level.name = map.name;
+		level.music = map.music;
 		level.onEnter = map.onEnter;
 		const defsMap = {};
 		const indexesMap = {};

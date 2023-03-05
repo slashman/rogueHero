@@ -42,5 +42,10 @@ export default {
 		if (this.level.onEnter) {
 			this.game.display.textBox.setText(this.level.onEnter);
 		}
+		if (this.level.music) {
+			this.game.audio.playMx(this.level.music);
+		} else {
+			this.game.audio.stopCurrentMx(); // TODO: Fade out
+		}
 	}
 }
