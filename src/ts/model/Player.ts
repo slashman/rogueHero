@@ -172,7 +172,9 @@ export default {
 		}
 		this.x += dir.x;
 		this.y += dir.y;
-		this.time--;
+		if (this.game.world.level.id !== 'apartment') {
+			this.time--;
+		}
 		this.land();
 	},
 	land: function() {
