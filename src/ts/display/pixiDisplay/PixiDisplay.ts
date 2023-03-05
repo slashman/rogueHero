@@ -69,10 +69,10 @@ export default {
 			PixiUtils.createTextBox(20, 5*16, config.textboxFontSize, config.textColor, "An entry for Hidden Heroes Jam, 2023")
 		);
 		titleScreenContainer.addChild(
-			PixiUtils.createTextBox(20, 7*16, config.textboxFontSize, config.textColor, "Developed by Santiago Zapata")
+			PixiUtils.createTextBox(20, 7*16, config.textboxFontSize, config.textColor, "Music and Sound Effects: VGMushroom\nPixel Art, Design, Coding: Santiago Zapata")
 		);
 		titleScreenContainer.addChild(
-			PixiUtils.createTextBox(20, 9*16, config.textboxFontSize, config.textColor, "Press Space to Continue")
+			PixiUtils.createTextBox(20, 10*16, config.textboxFontSize, config.textColor, "Press Space to Continue")
 		);
 
 		const mainGameContainer = new Container();
