@@ -20,7 +20,7 @@ export default class Level {
 	
 	private beingsList: Being[];
 	game: any;
-	private id: string;
+	id: string;
 	player: any;
 
 	constructor (game: any, id: string) {
