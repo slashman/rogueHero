@@ -61,7 +61,7 @@ export default {
 			);
 			return;
 		}
-		if (being.eventId === 'KIPP' && !being.interacted) {
+		if (being.eventId === 'FAN' && !being.interacted) {
 			this.game.display.showEvent('A young man rushes at you. It\'s you, Glenn Wichman! You are one of the programmers of Rogue, right?',
 				[
 					{
@@ -69,26 +69,26 @@ export default {
 						cost: 10,
 						action: () => {
 							this.game.display.showEvent(
-								'I knew! listen, I have a great idea to improve the game, do you want to hear it?',
+								'I knew! listen, I have some great ideas to improve the game, do you want to hear them?',
 								[
 									{
 										text: 'Sure.. what is it? (1 minute)',
 										cost: 10,
 										action: () => {
 											this.game.display.showEvent(
-												'"Imagine this: It\'s ROGUE, but with a MORALITY axis, so you have to be *kind* in order to win the game."\nYou believe it\'s not a very good idea.',
+												'I think you should include new character classes! cowboys, jedi knights, samurai, and also Superman as a hidden enemy!',
 												[
 													{
-														text: 'Well, being kind just for a mechanical benefit is not really being kind - it’s being selfish.',
+														text: 'Very... interesting..? Can you xerox that notebook... I may take a look [[suuuure!]]',
 														action: () => {
-															this.game.display.textBox.setText('The man looks a bit disappointed. "Yes. I guess you are right."');
+															this.game.display.textBox.setText('Right away!');
 															this.game.input.mode = 'MOVEMENT';
 														}
 													},
 													{
-														text: 'Oh... cool... yeah I will consider this... bye!',
+														text: 'Frankly, I don\'t think that would work. We are already struggling with memory limits.',
 														action: () => {
-															this.game.display.textBox.setText('You are the best! let me know when it\'s in the game so I can boast with my friends!');
+															this.game.display.textBox.setText('Yeah... whatever, I\'ll use these ideas on my own version of it. You\'ll regret not having taken them!');
 															this.game.input.mode = 'MOVEMENT';
 														}
 													}
@@ -142,6 +142,62 @@ export default {
 			);
 			return;
 		}
+
+		if (being.eventId === 'MARTY' && !being.interacted) {
+			this.game.display.showEvent(
+				'You see your friend, Marty. One of the most loyal testers of rogue. He is ecstatic: "Glenn! I think I have a great idea to improve the game, want to hear it?',
+				[
+					{
+						text: 'Sure.. what is it? (1 minute)',
+						cost: 10,
+						action: () => {
+							this.game.display.showEvent(
+								'Let\'s add a "kindness" stat! populate the dungeons with people and if you are kind with them, you\'ll have bonuses in combat!',
+								[
+									{
+										text: 'I think being kind just for a mechanical benefit is not really being kind - it\'s being selfish!',
+										action: () => {
+											this.game.display.textBox.setText('Marty looks a bit disappointed. "Yes. I guess you are right."');
+											this.game.input.mode = 'MOVEMENT';
+										}
+									},
+									{
+										text: 'Sounds amaaaaazing! [[Ugh]] I will... talk with Michael about it... yeah.',
+										action: () => {
+											this.game.display.textBox.setText('You are the best! let me know when it\'s in the game so I can boast with my friends!');
+											this.game.input.mode = 'MOVEMENT';
+										}
+									}
+								]
+							);
+							being.interacted = true;
+							being.setIntent('RANDOM');
+						}
+					},
+					{
+						text: 'Sorry, we have enough ideas already.',
+						action: () => {
+							this.game.display.textBox.setText('Of course... sorry to bother you!');
+							this.game.input.mode = 'MOVEMENT';
+							being.interacted = true;
+							being.setIntent('RANDOM');
+						}
+					},
+					{
+						text: 'Nope, I\'m a bit too busy now. Bye!',
+						action: () => {
+							this.game.display.textBox.setText('Of course... sorry to bother you!');
+							this.game.input.mode = 'MOVEMENT';
+							being.interacted = true;
+							being.setIntent('RANDOM');
+						}
+					}
+				]
+			);
+			return;
+		}
+
+
 		if (being.eventId === 'GABY' && !being.interacted) {
 			const sorryAction = () => {
 				this.game.display.textBox.setText('The kid says: "I am sorry, sir!" and runs terrified.');

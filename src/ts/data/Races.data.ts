@@ -27,11 +27,13 @@ export default {
 			'Thank you, young man!'
 		]
 	},
-	KIPP: {
-		name: 'Kipp',
+	MARTY: {
+		name: 'Marty',
 		tilesetData: '3-1',
 		dialogs: [
-			'Isn\'t it a lovely day?'
+			'When will the next version be out?',
+			'I love rogue!',
+			'Can we make Minotaurs a bit weaker? :D',
 		],
 		unique: true
 	},
@@ -56,5 +58,13 @@ export default {
 			'So-sorry!'
 		],
 		unique: true
+	},
+	FAN: {
+		name: 'Man',
+		tilesetData: '7-1',
+		dialogs: [
+			'Do you like Dungeons and Dragons?',
+			'Isn\'t it a lovely day?',
+		]
 	},
 }
