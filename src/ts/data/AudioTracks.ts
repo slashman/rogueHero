@@ -29,7 +29,9 @@ const AudioTracks = {
 
 
 		// Register the sound effects
-		//this.audio.registerSfx({ key: 'shot1', src: 'sfx_shoot_01.ogg', stereo: 0 });
+		this.audio.registerSfx({ key: 'carDoor', src: 'Cardoor.ogg', stereo: 0 });
+		this.audio.registerSfx({ key: 'door', src: 'Door.ogg', stereo: 0 });
+		this.audio.registerSfx({ key: 'step', src: 'Steps_1.ogg', stereo: 0 });
 	}
 }
 

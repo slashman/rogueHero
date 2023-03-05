@@ -14,6 +14,7 @@ export default class Level {
 	name: string;
 	music: string;
 	onEnter: string;
+	enterSFX: string;
 	private beings: Being[][];
 	private exits: any[];
 	private items: any[];

@@ -12,7 +12,7 @@ const Audio = {
 	registerSfx: function ({ key, ...cfg }) {
 		this.sfx[key] = this.createSound({
 			...cfg,
-			src: `assets/audio/sfx/${cfg.src}`
+			src: `assets/sfx/${cfg.src}`
 		});
 
 		if (cfg.stereo) { this.sfx[key].stereo(cfg.stereo); }

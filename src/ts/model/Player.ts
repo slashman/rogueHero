@@ -175,6 +175,7 @@ export default {
 		if (this.game.world.level.id !== 'apartment') {
 			this.time--;
 		}
+		this.game.audio.playSfx('step');
 		this.land();
 	},
 	land: function() {

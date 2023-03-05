@@ -48,6 +48,7 @@ const levelMaps = {
 		name: 'March 25, 1980. Santa Cruz, California.\nGlenn & Michael\'s Apartment',
 		onEnter: 'The connection with the University Computer has dropped! we have one hour until it\'s restarted and we lose all the work we have done in ROGUE during the weekend.',
 		music: 'mx_home',
+		enterSFX: 'door',
 		defs: [
 			{ char: '$', tile: Tiles.FLOOR, start: true },
 			{ char: 'T', tile: Tiles.FLOOR, being: Races.TOY},
@@ -89,6 +90,7 @@ const levelMaps = {
 		name: 'Streets of Santa Cruz',
 		onEnter: 'You breathe the fresh air of California. You can hear the sea nearby. Your car is parked to the Northwest.',
 		music: 'mx_town',
+		enterSFX: 'door',
 		defs: [
 			{ char: '>', tile: Tiles.SIDEWALK3, exitTo: 'apartment', start: true },
 			{ char: '8', tile: Tiles.HOUSEDOOR },
@@ -130,6 +132,7 @@ const levelMaps = {
 		name: 'University of California Santa Cruz.\nYendor College',
 		onEnter: 'You walk into the beautiful campus of UCSC. The Communications Building is somewhere to the East.',
 		music: 'mx_campus',
+		enterSFX: 'carDoor',
 		exits: [
 			{
 				x: 3,
@@ -158,6 +161,7 @@ const levelMaps = {
 		name: 'Communications Building\nBasement',
 		onEnter: 'You walk into the basement of the Communications Building. You can hear the constant whirring noise of Computer Machinery and fans. It\'s cold here..',
 		music: 'mx_commCenter',
+		enterSFX: 'door',
 		defs: [
 			{ index: '>', tile: Tiles.FLOOR, exitTo: 'campus', start: true },
 		],

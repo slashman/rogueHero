@@ -15,6 +15,7 @@ export default {
 		level.name = map.name;
 		level.music = map.music;
 		level.onEnter = map.onEnter;
+		level.enterSFX = map.enterSFX;
 		const defsMap = {};
 		const indexesMap = {};
 		const defsList = globalDefs.concat(map.defs);
