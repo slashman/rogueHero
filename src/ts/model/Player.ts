@@ -142,6 +142,32 @@ export default {
 			);
 			return;
 		}
+		if (being.eventId === 'GABY' && !being.interacted) {
+			const sorryAction = () => {
+				this.game.display.textBox.setText('The kid says: "I am sorry, sir!" and runs terrified.');
+				this.game.input.mode = 'MOVEMENT';
+				being.interacted = true;
+				being.setIntent('RANDOM');
+			}
+
+			this.game.display.showEvent('An energized little child runs straight into you, spilling her entire glass of mango juice over you. What will you do?',
+				[
+					{
+						text: 'Mind your way, KID!',
+						action: sorryAction
+					},
+					{
+						text: 'Just what I needed now, AHH!',
+						action: sorryAction
+					},
+					{
+						text: 'Hey kid, try being more careful :)',
+						action: sorryAction
+					}
+				]
+			);
+			return;
+		}
 		if (being.eventId === 'PUNK' && !being.interacted) {
 			this.game.display.showEvent('You see a man, seemingly worried heavily by something. What will you do?',
 				[

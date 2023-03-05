@@ -49,4 +49,12 @@ export default {
 			'What\'s your problem?'
 		]
 	},
+	GABY: {
+		name: 'Gaby',
+		tilesetData: '6-1',
+		dialogs: [
+			'So-sorry!'
+		],
+		unique: true
+	},
 }
