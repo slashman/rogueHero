@@ -95,6 +95,7 @@ export default {
 												]
 											);
 											being.interacted = true;
+											being.setIntent('RANDOM');
 										}
 									},
 									{
@@ -103,6 +104,7 @@ export default {
 											this.game.display.textBox.setText('Of course... sorry to bother you!');
 											this.game.input.mode = 'MOVEMENT';
 											being.interacted = true;
+											being.setIntent('RANDOM');
 										}
 									},
 									{
@@ -111,6 +113,7 @@ export default {
 											this.game.display.textBox.setText('Of course... sorry to bother you!');
 											this.game.input.mode = 'MOVEMENT';
 											being.interacted = true;
+											being.setIntent('RANDOM');
 										}
 									}
 								]
@@ -123,6 +126,7 @@ export default {
 							this.game.display.textBox.setText('Of course... sorry to bother you!');
 							this.game.input.mode = 'MOVEMENT';
 							being.interacted = true;
+							being.setIntent('RANDOM');
 						}
 					},
 					{
@@ -131,6 +135,7 @@ export default {
 							this.game.display.textBox.setText('Huh... ok.');
 							this.game.input.mode = 'MOVEMENT';
 							being.interacted = true;
+							being.setIntent('RANDOM');
 						}
 					}
 				]
