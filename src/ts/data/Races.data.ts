@@ -73,5 +73,26 @@ export default {
 		dialogs: [
 			'Let\'s have coffee some time ;)',
 		]
+	},
+	SLUG1: {
+		name: 'Banana Slug',
+		tilesetData: '9-1',
+		dialogs: [
+			'Fffhhhff',
+		]
+	},
+	SLUG3: {
+		name: 'Banana Slug',
+		tilesetData: '10-1',
+		dialogs: [
+			'Fffhhhff',
+		]
+	},
+	SLUG2: {
+		name: 'Banana Slug',
+		tilesetData: '11-1',
+		dialogs: [
+			'Fffhhhff',
+		]
 	}
 }
