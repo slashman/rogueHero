@@ -102,7 +102,7 @@ export default {
 			wordWrapWidth: config.tileSize * config.viewportCountX * 4 - 20
 		});
 		text.position.x = 10;
-		text.position.y = (config.tileSize * config.viewportCountY) / 2 + 96;
+		text.position.y = (config.tileSize * config.viewportCountY) / 2 + 88;
 		text.scale.x = 0.25;
 		text.scale.y = 0.25;
 		mainGameContainer.addChild(text);
