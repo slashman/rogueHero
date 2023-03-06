@@ -224,6 +224,29 @@ export default {
 			);
 			return;
 		}
+		if (being.eventId === 'CUTE_WOMAN' && !being.interacted) {
+			this.game.display.showEvent('You see a young woman, your eyes cross with hers for a split second. You feel a strange energy running around your body. What will you do?',
+				[
+					{
+						text: 'Smile at her',
+						action: () => {
+							this.game.display.textBox.setText('She smiles back.');
+							this.game.input.mode = 'MOVEMENT';
+							being.interacted = true;
+						}
+					},
+					{
+						text: 'Look away and pretend nothing happened.',
+						action: () => {
+							this.game.display.textBox.setText('I can\'t believe you.');
+							this.game.input.mode = 'MOVEMENT';
+						}
+					}
+				]
+			);
+			return;
+		}
+		
 		if (being.eventId === 'PUNK' && !being.interacted) {
 			this.game.display.showEvent('You see a man, seemingly worried heavily by something. What will you do?',
 				[

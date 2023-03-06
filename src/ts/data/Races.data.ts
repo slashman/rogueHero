@@ -67,4 +67,11 @@ export default {
 			'Isn\'t it a lovely day?',
 		]
 	},
+	CUTE_WOMAN: {
+		name: 'Young Woman',
+		tilesetData: '8-1',
+		dialogs: [
+			'Let\'s have coffee some time ;)',
+		]
+	}
 }
