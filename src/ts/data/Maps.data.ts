@@ -45,7 +45,7 @@ const levelMaps = {
 
 	apartment: {
 		name: 'March 25, 1980. Santa Cruz, California.\nGlenn & Michael\'s Apartment',
-		onEnter: 'The connection with the University Computer has dropped! we have one hour until it\'s restarted and we lose all the work we have done in ROGUE during the weekend.',
+		onEnter: 'The connection with the University Computer has dropped! we have one hour until it\'s restarted and we lose all the work we have done in ROGUE during the weekend.\n\nUse Arrow keys to move, bump into people or things (like the computers over the table) to examine them.',
 		music: 'mx_home',
 		enterSFX: 'door',
 		defs: [
