@@ -457,4 +457,52 @@ export default {
 		name: 'VAC',
 		tilesetData: '12-10'
 	},
+	STAIRS: {
+		solid: false,
+		opaque: false,
+		name: 'Stairs',
+		tilesetData: '9-2'
+	},
+	TERMINAL2: {
+		solid: true,
+		opaque: false,
+		name: 'Terminal',
+		tilesetData: '14-5'
+	},
+	MAIN1: {
+		solid: true,
+		opaque: false,
+		name: 'Main',
+		tilesetData: '8-12'
+	},
+	MAIN2: {
+		solid: true,
+		opaque: false,
+		name: 'Main',
+		tilesetData: '9-12'
+	},
+	MAIN3: {
+		solid: true,
+		opaque: false,
+		name: 'Main',
+		tilesetData: '8-13'
+	},
+	MAIN4: {
+		solid: true,
+		opaque: false,
+		name: 'Main',
+		tilesetData: '9-13'
+	},
+	WINDOOR1: {
+		solid: true,
+		opaque: false,
+		name: 'Door',
+		tilesetData: '4-12'
+	},
+	WINDOOR2: {
+		solid: true,
+		opaque: false,
+		name: 'Door',
+		tilesetData: '4-13'
+	},
 }
