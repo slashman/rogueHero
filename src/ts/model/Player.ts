@@ -23,7 +23,7 @@ export default {
 	visible: [],
 	memory: {},
 	items: [],
-	time: 900,
+	time: 500,
 	init: function(game) {
 		this.game = game;
 		for (var j = -this.MAX_SIGHT_RANGE; j <= this.MAX_SIGHT_RANGE; j++){
