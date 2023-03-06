@@ -60,19 +60,17 @@ export default {
 		app.stage.addChild(titleScreenContainer);
 		titleScreenContainer.visible = false;
 		titleScreenContainer.addChild(
-			PixiUtils.createTextBox(20, 2*16, config.textboxFontSize, config.textColor, "Broken Connection")
-		);
-		titleScreenContainer.addChild(
-			PixiUtils.createTextBox(20, 4*16, config.textboxFontSize, config.textColor, "Based on real life events")
-		);
-		titleScreenContainer.addChild(
-			PixiUtils.createTextBox(20, 5*16, config.textboxFontSize, config.textColor, "An entry for Hidden Heroes Jam, 2023")
-		);
-		titleScreenContainer.addChild(
-			PixiUtils.createTextBox(20, 7*16, config.textboxFontSize, config.textColor, "Music and Sound Effects: VGMushroom\nPixel Art, Design, Coding: Santiago Zapata")
-		);
-		titleScreenContainer.addChild(
-			PixiUtils.createTextBox(20, 10*16, config.textboxFontSize, config.textColor, "Press Space to Continue")
+			PixiUtils.createTextBox(20, 2*16, config.textboxFontSize, config.textColor, 
+				"--== BrokEn ConNEctIons ==--\n\n"+
+				"It's 1980, Glenn Wichman ventures into a basement in University of California Santa Cruz, to save the development of rogue.\n\n" +
+				"Based on real life events\n\n"+
+				"An entry for Hidden Heroes Jam, 2023\n\n"+
+				"Music and Sound Effects: VGMushroom\n"+
+				"Pixel Art, Design, Coding: Santiago Zapata\n\n"+
+				"Significant history contributions by Michael Toy\n\n\n"+
+				"Press Space to Continue"
+				, 400 * 4
+			)
 		);
 
 		const mainGameContainer = new Container();
