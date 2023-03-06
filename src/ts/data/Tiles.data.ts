@@ -237,25 +237,58 @@ export default {
 		solid: true,
 		opaque: false,
 		name: 'Car',
-		tilesetData: '3-6'
+		tilesetData: '0-8',
+		interact: (game) => {
+			game.player.examineBuggy();
+		}
 	},
 	CAR2: {
-		solid: false,
+		solid: true,
 		opaque: false,
 		name: 'Car',
-		tilesetData: '4-6'
+		tilesetData: '1-8',
+		interact: (game) => {
+			game.player.examineBuggy();
+		}
 	},
 	CAR3: {
 		solid: true,
 		opaque: false,
 		name: 'Car',
-		tilesetData: '3-7'
+		tilesetData: '2-8',
+		interact: (game) => {
+			game.player.examineBuggy();
+		}
 	},
 	CAR4: {
 		solid: true,
 		opaque: false,
 		name: 'Car',
-		tilesetData: '4-7'
+		tilesetData: '0-9',
+		interact: (game) => {
+			game.player.examineBuggy();
+		}
+	},
+	CAR5: {
+		solid: false,
+		opaque: false,
+		name: 'Car',
+		tilesetData: '1-9'
+	},
+	CAR6: {
+		solid: true,
+		opaque: false,
+		name: 'Car',
+		tilesetData: '2-9',
+		interact: (game) => {
+			game.player.examineBuggy();
+		}
+	},
+	CARARROW: {
+		solid: false,
+		opaque: false,
+		name: 'Road',
+		tilesetData: '1-10'
 	},
 	GRASS1: {
 		solid: false,

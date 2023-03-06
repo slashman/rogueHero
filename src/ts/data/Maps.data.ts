@@ -4,7 +4,6 @@ import Items from './Items.data';
 
 const globalDefs = [
 	{ char: ' ', tile: Tiles.VOID },
-	{ char: 'B', tile: Tiles.GRASS, item: Items.BOOK_OF_MIRDAS },
 
 	{ index: 102, tile: Tiles.GRASS1},
 	{ index: 103, tile: Tiles.GRASS2},
@@ -88,7 +87,7 @@ const levelMaps = {
 	},
 	overworld: {
 		name: 'Streets of Santa Cruz',
-		onEnter: 'You breathe the fresh air of California. You can hear the sea nearby. Your car is parked to the Northwest.',
+		onEnter: 'You breathe the fresh air of California. You can hear the sea nearby. Your car is parked to the West.',
 		music: 'mx_town',
 		enterSFX: 'door',
 		defs: [
@@ -106,26 +105,29 @@ const levelMaps = {
 			{ char: ']', tile: Tiles.ROAD3 },
 			
 			{ char: '1', tile: Tiles.CAR1 },
-			{ char: '2', tile: Tiles.CAR2, exitTo: 'campus' },
+			{ char: '2', tile: Tiles.CAR2 },
 			{ char: '3', tile: Tiles.CAR3 },
 			{ char: '4', tile: Tiles.CAR4 },
+			{ char: 'A', tile: Tiles.CAR5, exitTo: 'campus' },
+			{ char: 'B', tile: Tiles.CAR6 },
+			{ char: 'C', tile: Tiles.CARARROW },
 
 			{ char: '9', tile: Tiles.SIDEWALK1, being: Races.OLD_LADY, intent: 'WAIT', eventId: 'OLD_LADY' },
 		],
 		map: [
-			"+..12                          ",
-			"|.]34                          ",
-			"+...+                          ",
-			"|.].|                          ",
-			"+...+                          ",
-			"|.].|                          ",
-			"+...+   567  56667   5667 567  ",
-			"|.].|   #8#  #8###   ##8# #8#  ",
-			"+...+9+-+--++-+-+-+-+-+--+->-+-+",
-			"..]............................",
-			"....=.=.=.=.=.=.=.=.=.=.=.=.=.=",
-			"..]............................",
-			"+...+-+-+-+-+-+-+-+-+-+-+-+-+-+",
+			"     +...+                          ",
+			"     |.].|                          ",
+			"     +...+                          ",
+			"     |.].|                          ",
+			"     +...+                          ",
+			"     |.].|                          ",
+			"     +...+   567  56667   5667 567  ",
+			"     |.].|   #8#  #8###   ##8# #8#  ",
+			"+123-+...+9+-+-++-+-+-+-+-+--+->-+-+",
+			".4AB...]............................",
+			".=C=.=...=.=.=.=.=.=.=.=.=.=.=.=.=.=",
+			".......]............................",
+			"---+-+...+-+-+-+-+-+-+-+-+-+-+-+-+-+",
 		]
 	},
 	campus: {

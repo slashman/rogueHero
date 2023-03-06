@@ -411,5 +411,8 @@ export default {
 	},
 	tryUse: function(item, dx, dy) {
 		item.def.type.useFunction(this.game, item, dx, dy);
+	},
+	examineBuggy () {
+		this.game.display.showText("You see \"Bizmark\", your 1968 Volkswagen Bug. Its front was crunched when brakes failed in the rain and you rear-ended a car. It ended up with yellow fenders from an old “Baja Bug” and the red hood from a 62' Bug that you managed to frankestein together.");
 	}
 }
