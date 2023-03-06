@@ -76,7 +76,7 @@ export default {
 										cost: 10,
 										action: () => {
 											this.game.display.showEvent(
-												'I think you should include new character classes! cowboys, jedi knights, samurai, and also Superman as a hidden enemy!',
+												'I think you should include new character classes! cowboys, jedi knights, samurai, and also Superman as a hidden enemy! It\'s all in my notebook.',
 												[
 													{
 														text: 'Very... interesting..? Can you xerox that notebook... I may take a look [[suuuure!]]',
